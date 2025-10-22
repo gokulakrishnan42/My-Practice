@@ -1,0 +1,84 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<html>
+    <head>
+        <title>Home Page</title>
+    <link href="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+    <script src="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
+    <script src="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.esm.js"></script>
+    <script src="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.esm.min.js"></script>
+    <script src="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.js"></script>
+    <script src="~/wwwroot/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+   
+
+</head>
+        <body>
+            <h1>Welcome to my Home Page</h1>
+            <img src="~/Images/krishna.jpg" alt="krishna image" />
+           
+            <img src="~/Images/images.jpg" alt="Employee image" />
+ @{
+        List<ShoppingApp.Models.User> ousers = new List<ShoppingApp.Models.User>()
+        {
+
+        new ShoppingApp.Models.User() {Name = "Gojo",ImagePath = "Images/Gojo.jpg",Desc = "Welcome to my Page" },
+        new ShoppingApp.Models.User() {Name = "Employee",ImagePath = "Images/images.jpg",Desc = "Welcome to my Page" }
+
+
+        };
+    }
+       
+
+        
+        @{ int value1=100;
+        int value2 = 200;
+        int result = value1 + value2;
+     }
+
+    @functions{
+        public int AddTwoNum(int a,int b)
+        {
+            return a + b;
+        }
+    }
+
+  <h1>First Value:@value1</h1>
+     <h1>Second Value:@value2</h1>
+     <h1>Result:@result</h1> 
+     <h1>AddTwoNum:@AddTwoNum(25,35)</h1>
+        
+     @{
+         foreach(var item in ousers)
+         {
+          <div class="card" style="width:400px">
+                  <img class="card-img-top" src=@item.ImagePath alt="Gojo image">
+         <div class="card-body">
+               <h4 class="card-title">@item.Name</h4>
+                <p class="card-text">@item.Desc</p>
+               <a href="#" class="btn btn-primary">See Profile</a>
+         </div>
+        </div>
+         }
+    
+     }
+   
+        
+    
+    
+
+        
+    
+
+        </body>
+   
+</html>
