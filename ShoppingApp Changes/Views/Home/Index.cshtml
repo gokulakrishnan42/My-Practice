@@ -1,0 +1,68 @@
+﻿
+
+
+<html>
+    <head>
+       
+
+</head>
+        <body>
+            <h1>Welcome to my Home Page @ViewData["Name"]</h1>
+            <img src="~/Images/krishna.jpg" alt="krishna image" />
+            <img src="~/Images/images.jpg" alt="Employee image" />
+    @{
+        List<ShoppingApp.Models.User> ousers = (List<ShoppingApp.Models.User>) ViewData["listofusers"];
+        
+        // {
+
+        // new ShoppingApp.Models.User() {Name = "Gojo",ImagePath = "Images/Gojo.jpg",Desc = "Welcome to my Page" },
+        // new ShoppingApp.Models.User() {Name = "Employee",ImagePath = "Images/images.jpg",Desc = "Welcome to my Page" }
+
+
+        // };
+    }
+       
+
+        
+        @{ int value1=100;
+        int value2 = 200;
+        int result = value1 + value2;
+     }
+
+    @functions{
+        public int AddTwoNum(int a,int b)
+        {
+            return a + b;
+        }
+    }
+
+  <h1>First Value:@value1</h1>
+     <h1>Second Value:@value2</h1>
+     <h1>Result:@result</h1> 
+     <h1>AddTwoNum:@AddTwoNum(25,35)</h1>
+        
+     @{
+         foreach(var item in ousers)
+         {
+          <div class="card" style="width:400px">
+                  <img class="card-img-top" src=@item.ImagePath alt="Gojo image">
+         <div class="card-body">
+               <h4 class="card-title">@item.Name</h4>
+                <p class="card-text">@item.Desc</p>
+               <a href="#" class="btn btn-primary ">See Profile</a>
+         </div>
+        </div>
+         }
+    
+     }
+   
+        
+    
+    
+
+        
+    
+
+        </body>
+   
+</html>
